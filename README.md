@@ -57,3 +57,16 @@
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{A&space;\times&space;Z_b&space;\rightarrow&space;B&space;\times&space;Z_a}&space;=&space;L_{GAN}^B(D_B,G_{AB})&space;&plus;&space;L_{GAN}^{Z_a}(D_{Z_a},E_A,G_{AB})&space;&plus;&space;\gamma_1&space;L_{CYC}^A(G_AB,G_BA,E_A)&plus;\gamma_2&space;L_{CYC}^{Z_b}(G_{AB},E_B)">
 </p>
+
+
+* CycleGAN의 translation이 deteministic해지는 문제를 해결하면서 multimodal한 output을 mapping할 수 있도록 latent Z를 augment함
+
+## CycleGAN with Stochastic Mappings
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{GAN}^B(G_{AB},D_B)&space;=&space;\mathbb{E}_{b&space;\sim&space;P_d(b)}[logD_B(b)]&plus;\mathbb{E}_{a&space;\sim&space;P_d(a),z&space;\sim&space;p(z)}[log(1-D_(G_{AB(a,z)}))]">
+</p>
+
+
+* CycleGAN을 stochastic하게 만들기 위하여 G에 노이즈 latent z를 추가
+* 하지만 cycle loss는 노이즈 z를 무시하는쪽으로 학습시킨다.
+* (그러나 실험적으로는 꽤나 잘나왔다. 다만 A->B->A->B 과정에서 multimodal한 output을 얻어지지 않았다. steganograpy 현상 발생)
