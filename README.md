@@ -10,7 +10,8 @@
 <img src="https://latex.codecogs.com/gif.latex?L(G,F,D_X,D_Y)&space;=&space;L_{GAN}(G,D_Y,X,Y)&space;&plus;&space;L_{GAN}(F,D_X,Y,X)&space;&plus;&space;\lambda&space;L_{cyc}(G,F)">
 </p>
 
-
+#
+#
 ## cycle consistent loss
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_comprisons.png">
@@ -27,8 +28,8 @@
 * 앞항을 forward cycle loss, 뒷항을 backward cycle loss라고 부름. 
 
 
-
-
+#
+#
 ## Identity loss
 
 <p align="center">
@@ -45,12 +46,10 @@
 [*identity loss 관련 issue:] [https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/322](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/322)
 
 
-
-
-
-
-
-
+#
+#
+#
+#
 # Augmented CycleGAN
 *Augmented CycleGAN: Learning Many-to-Many Mappings from Unpaired Data (ICML 2018) [[paper]](https://arxiv.org/pdf/1802.10151.pdf)
 
