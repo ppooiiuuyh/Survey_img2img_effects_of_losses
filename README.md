@@ -12,7 +12,7 @@
 
   
   
-### cycle consistent loss
+### - cycle consistent loss
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_comprisons.png">
 </p>
@@ -30,7 +30,7 @@
 
   
   
-### Identity loss
+### - Identity loss
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_identityloss.PNG">
@@ -49,7 +49,7 @@
     
   
   
-# Augmented CycleGAN
+# - Augmented CycleGAN
 *Augmented CycleGAN: Learning Many-to-Many Mappings from Unpaired Data (ICML 2018) [[paper]](https://arxiv.org/pdf/1802.10151.pdf)
 
 <p align="center">
@@ -66,7 +66,7 @@
 
   
   
-### CycleGAN with Stochastic Mappings
+### - CycleGAN with Stochastic Mappings
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{GAN}^B(G_{AB},D_B)&space;=&space;\mathbb{E}_{b&space;\sim&space;P_d(b)}[logD_B(b)]&plus;\mathbb{E}_{a&space;\sim&space;P_d(a),z&space;\sim&space;p(z)}[log(1-D_(G_{AB(a,z)}))]">
 </p>
