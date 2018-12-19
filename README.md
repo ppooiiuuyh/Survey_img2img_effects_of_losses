@@ -50,10 +50,10 @@
 *Augmented CycleGAN: Learning Many-to-Many Mappings from Unpaired Data (ICML 2018) [[paper]](https://arxiv.org/pdf/1802.10151.pdf)
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/augcyclegan.png">
+<img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/augcyclegan.PNG">
 </p>
 
 
 <p align="center">
-<img src="https://latex.codecogs.com/gif.latex?L(G,F,D_X,D_Y)&space;=&space;L_{GAN}(G,D_Y,X,Y)&space;&plus;&space;L_{GAN}(F,D_X,Y,X)&space;&plus;&space;\lambda&space;L_{cyc}(G,F)">
+<img src="https://latex.codecogs.com/gif.latex?L_{A&space;\times&space;Z_b&space;\rightarrow&space;B&space;\times&space;Z_a}&space;=&space;L_{GAN}^B(D_B,G_{AB})&space;&plus;&space;L_{GAN}^{Z_a}(D_{Z_a},E_A,G_{AB})&space;&plus;&space;\gamma_1&space;L_{CYC}^A(G_AB,G_BA,E_A)&plus;\gamma_2&space;L_{CYC}^{Z_b}(G_{AB},E_B)">
 </p>
