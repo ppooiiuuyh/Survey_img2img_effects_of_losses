@@ -73,8 +73,20 @@
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{GAN}^B(G_{AB},D_B)&space;=&space;\mathbb{E}_{b&space;\sim&space;P_d(b)}[logD_B(b)]&plus;\mathbb{E}_{a&space;\sim&space;P_d(a),z&space;\sim&space;p(z)}[log(1-D_(G_{AB(a,z)}))]">
 </p>
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{CYC}^A(G_{AB},G_{BA})&space;=&space;\mathbb{E}_{a&space;\sim&space;P_d(a),z_1,z_2&space;\sim&space;p(z)}||G_{BA}(G_{AB}(a,z_1),z_2))-a||_1">
+</p>
 
 
 * CycleGAN을 stochastic하게 만들기 위하여 G에 노이즈 latent z를 추가
 * 하지만 cycle loss는 노이즈 z를 무시하는쪽으로 학습시킨다.
 * (그러나 실험적으로는 꽤나 잘나왔다. 다만 A->B->A->B 과정에서 multimodal한 output을 얻어지지 않았다. steganograpy 현상 발생)
+
+
+*따라서 다음처럼 변경 (Augmented)
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\tilde{b}&space;=&space;G_{AB}(a,z_b),&space;\tilde{z_b}&space;=&space;E_A(a,\tilde{b})
+">
+</p>
+
+### - Marginal Matching Loss
