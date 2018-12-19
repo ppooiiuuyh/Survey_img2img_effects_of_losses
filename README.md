@@ -92,4 +92,11 @@
 * cycle-consistency with stochastic을 strutured mapping이 될 수 있도록 돕는다.
 
 ## ◆ Marginal Matching Loss
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{GAN}^{Z_a}(E_A,G_{AB},D_Z_a)&space;=&space;\mathbb{E}_{z_a&space;\sim&space;p(z_a)}[logD_Z_a(z_a)]&space;&plus;&space;\mathbb{E}_{a&space;\sim&space;p_d(a),z_b&space;\sim&space;p(z_b)}[log(1-D_Z_a(\tilde&space;z_a))]">
+</p>
 
+* Ea로 부터 인코딩되는 z~a가 p(za)의 분포를 가지도록 만든다.
+* z에 대한 GAN
+
+## ◆ Cycle Consistency Loss
