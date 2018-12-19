@@ -1,20 +1,24 @@
-Survey_img2img_effects_of_losses
-## CycleGAN
+# CycleGAN
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan.png">
 </p>
 
-#### cycle consistent loss
+## cycle consistent loss
+<p align="center">
+<img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_comprisons.png">
+</p>
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{cyc}(G,F)=&space;\mathbb{E}_{x&space;\sim&space;P_{data}(x))}[||F(G(x))-x||_1]&space;&plus;&space;\mathbb{E}_{y&space;\sim&space;P_{data}(y))}[||G(F(x))-y||_1]">
 </p>
 
+
+
 * mode collapse 방지
 * L1 loss 대신에 adversarial loss 적용해보았으나 성능향상을 얻지 못하였다고 함
 * 앞항을 forward cycle loss, 뒷항을 backward cycle loss라고 부름. 
 
-#### Identity loss
+## Identity loss
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_identityloss.PNG">
