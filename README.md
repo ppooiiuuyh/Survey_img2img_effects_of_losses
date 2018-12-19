@@ -83,7 +83,7 @@
 * (그러나 실험적으로는 꽤나 잘나왔다. 다만 A->B->A->B 과정에서 multimodal한 output을 얻어지지 않았다. steganograpy 현상 발생)
 
 
-*따라서 다음처럼 변경 (Augmented)
+* 따라서 다음처럼 변경 (Augmented)
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\tilde{b}&space;=&space;G_{AB}(a,z_b),&space;\tilde{z_b}&space;=&space;E_A(a,\tilde{b})">
 </p>
