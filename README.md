@@ -78,16 +78,17 @@
 </p>
 
 
-* CycleGAN을 stochastic하게 만들기 위하여 G에 노이즈 latent z를 추가
+* CycleGAN을 stochastic하게 만들기 위하여 G에 노이즈 latent z를 추가.
 * 하지만 cycle loss는 노이즈 z를 무시하는쪽으로 학습시킨다.
-* (그러나 실험적으로는 꽤나 잘나왔다. 다만 A->B->A->B 과정에서 multimodal한 output을 얻어지지 않았다. steganograpy 현상 발생)
+* (그러나 실험적으로는 꽤나 잘나왔다. 다만 A->B->A->B 과정에서 multimodal한 output을 얻어지지 않았다. steganograpy 현상 발생).
 
 
 * 따라서 다음처럼 변경 (Augmented)
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\tilde{b}&space;=&space;G_{AB}(a,z_b),&space;\tilde{z_b}&space;=&space;E_A(a,\tilde{b})">
 </p>
-* 주어진 pair (a,zb) ~ Pd(a)P(zb) 에서 pair(B~, z~a) 를 생성
+
+* 주어진 pair (a,zb) ~ Pd(a)P(zb) 에서 pair(B~, z~a) 를 생성.
 * cycle-consistency with stochastic을 strutured mapping이 될 수 있도록 돕는다.
 
 ## ◆ Marginal Matching Loss
