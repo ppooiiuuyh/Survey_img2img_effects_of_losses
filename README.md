@@ -85,8 +85,7 @@
 
 *따라서 다음처럼 변경 (Augmented)
 <p align="center">
-<img src="https://latex.codecogs.com/gif.latex?\tilde{b}&space;=&space;G_{AB}(a,z_b),&space;\tilde{z_b}&space;=&space;E_A(a,\tilde{b})
-">
+<img src="https://latex.codecogs.com/gif.latex?\tilde{b}&space;=&space;G_{AB}(a,z_b),&space;\tilde{z_b}&space;=&space;E_A(a,\tilde{b})">
 </p>
 
 ### - Marginal Matching Loss
