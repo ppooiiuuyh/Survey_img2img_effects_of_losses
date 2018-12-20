@@ -1,4 +1,4 @@
-# CycleGAN
+# ◆  CycleGAN
 *Unpaired Image-toImage Translation using Cycle-Consistent Adversarial Networks[[paper]](https://arxiv.org/pdf/1703.10593.pdf)
 
 <p align="center">
@@ -12,7 +12,7 @@
 
   
   
-## ◆ cycle consistent loss
+## cycle consistent loss
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_comprisons.png">
 </p>
@@ -30,7 +30,7 @@
 
   
   
-## ◆ Identity loss
+## Identity loss
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/cyclegan_identityloss.PNG">
@@ -46,10 +46,7 @@
 [*identity loss 관련 issue:] [https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/322](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/issues/322)
 
 
-    
-  
-  
-# Augmented CycleGAN
+# ◆ Augmented CycleGAN
 *Augmented CycleGAN: Learning Many-to-Many Mappings from Unpaired Data (ICML 2018) [[paper]](https://arxiv.org/pdf/1802.10151.pdf)
 <p align="center">
 <img src="https://raw.githubusercontent.com/ppooiiuuyh/Survey_img2img_effects_of_losses/master/assets/augcyclegan2.PNG" width="400">
@@ -66,10 +63,9 @@
 
 
 * CycleGAN의 translation이 deteministic해지는 문제를 해결하면서 multimodal한 output을 mapping할 수 있도록 latent Z를 augment함
+* 일반적으로 noise z를 input에 concatenation하는 것과는달리 z로 부터 선형함수(신경망으로 근사)로 mu와 sigma를 구한 후 G의 일부 intermediate layer (코드상에서는 3레이어)에 instance norm을 적용하는 방식을 사용하였다.
 
-  
-  
-## ◆ CycleGAN with Stochastic Mappings
+## CycleGAN with Stochastic Mappings
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{GAN}^B(G_{AB},D_B)&space;=&space;\mathbb{E}_{b&space;\sim&space;P_d(b)}[logD_B(b)]&plus;\mathbb{E}_{a&space;\sim&space;P_d(a),z&space;\sim&space;p(z)}[log(1-D_(G_{AB(a,z)}))]">
 </p>
@@ -91,7 +87,7 @@
 * 주어진 pair (a,zb) ~ Pd(a)P(zb) 에서 pair(B~, z~a) 를 생성.
 * cycle-consistency with stochastic을 strutured mapping이 될 수 있도록 돕는다.
 
-## ◆ Marginal Matching Loss
+## Marginal Matching Loss
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{GAN}^{Z_a}(E_A,G_{AB},D_Z_a)&space;=&space;\mathbb{E}_{z_a&space;\sim&space;p(z_a)}[logD_Z_a(z_a)]&space;&plus;&space;\mathbb{E}_{a&space;\sim&space;p_d(a),z_b&space;\sim&space;p(z_b)}[log(1-D_Z_a(\tilde&space;z_a))]">
 </p>
@@ -99,4 +95,24 @@
 * Ea로 부터 인코딩되는 z~a가 p(za)의 분포를 가지도록 만든다.
 * z에 대한 GAN
 
-## ◆ Cycle Consistency Loss
+## Augmented Cycle Consistency Loss
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{CYC}^A(G_{AB},G_{BA},E_A)&space;=&space;\mathbb{E}_{a\sim&space;P_{d(a)},&space;z_b&space;\sim&space;p(z_b)}[||a'-a||_1]">
+</p>\
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\tilde&space;b&space;=&space;G_{AB}(a,z_b),&space;\tilde&space;z_a&space;=&space;E_A(a,&space;\tilde&space;b),&space;a'=G_{BA}(\tilde&space;b,&space;\tilde&space;z_a)">
+</p>\
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{CYC}^{Z_b}(G_{AB},G_{BA},E_A)=\mathbb{E}_{a&space;\sim&space;P_d(a),z_b\sim&space;P_d(z_b)}||z'_b&space;-&space;z_b||_1">
+</p>\
+
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\tilde&space;z_b&space;=&space;E_B(a,&space;\tilde&space;b),&space;\tilde&space;b&space;=&space;G_{AB}(a,z_b)">
+</p>\
+
+* z에 대한 cycle consistency loss가 추가되었다
+* z에 대한 marginal matching loss가 z를 normal distribution을 가지도록 만드는 역할을 한다면, z에대한 cycle consistency loss는 z,a-> b~과정에서 b~에 z에 대한 정보가 더 명시적으로 포함되도록 만든다. 즉 z를 무시하지 않는쪽으로 학습되도록 만든다.
+
