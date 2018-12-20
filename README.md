@@ -98,21 +98,21 @@
 ## Augmented Cycle Consistency Loss
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{CYC}^A(G_{AB},G_{BA},E_A)&space;=&space;\mathbb{E}_{a\sim&space;P_{d(a)},&space;z_b&space;\sim&space;p(z_b)}[||a'-a||_1]">
-</p>\
+</p>
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\tilde&space;b&space;=&space;G_{AB}(a,z_b),&space;\tilde&space;z_a&space;=&space;E_A(a,&space;\tilde&space;b),&space;a'=G_{BA}(\tilde&space;b,&space;\tilde&space;z_a)">
-</p>\
+</p>
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?L_{CYC}^{Z_b}(G_{AB},G_{BA},E_A)=\mathbb{E}_{a&space;\sim&space;P_d(a),z_b\sim&space;P_d(z_b)}||z'_b&space;-&space;z_b||_1">
-</p>\
+</p>
 
 
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\tilde&space;z_b&space;=&space;E_B(a,&space;\tilde&space;b),&space;\tilde&space;b&space;=&space;G_{AB}(a,z_b)">
-</p>\
+</p>
 
 * z에 대한 cycle consistency loss가 추가되었다
-* z에 대한 marginal matching loss가 z를 normal distribution을 가지도록 만드는 역할을 한다면, z에대한 cycle consistency loss는 z,a-> b~과정에서 b~에 z에 대한 정보가 더 명시적으로 포함되도록 만든다. 즉 z를 무시하지 않는쪽으로 학습되도록 만든다.
+* z에 대한 marginal matching loss가 z를 normal distribution을 가지도록 만드는 역할을 한다면, z에대한 cycle consistency loss는 z,a-> b~ 과정에서 b~ 에 z에 대한 정보가 더 명시적으로 포함되도록 만든다. 즉 z를 무시하지 않는쪽으로 학습되도록 만든다.
 
