@@ -116,3 +116,10 @@
 * z에 대한 cycle consistency loss가 추가되었다
 * z에 대한 marginal matching loss가 z를 normal distribution을 가지도록 만드는 역할을 한다면, z에대한 cycle consistency loss는 z,a-> b~ 과정에서 b~ 에 z에 대한 정보가 더 명시적으로 포함되도록 만든다. 즉 z를 무시하지 않는쪽으로 학습되도록 만든다.
 
+## Semi-supervised Loss
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?L_{SUP}^{A}(G_{BA},E_{A})=\mathbb{E}_{(a,b)&space;\sim&space;P_d(a,b)}&space;||G_BA(b,'\tilde&space;z_a)&space;-&space;a||_1,&space;\tilde&space;z_a&space;=&space;E_A(a,d))">
+</p>
+* 만약 paired data를 이용가능하다면 성능을 더 향상시킬 수 있다.
+* Encoder E의 경우 adversarial만 적용. a->b~ 를 만들때 random noise z를 사용하지 않기 때문에 z에 대한 cycle consistency loss는 구하지 못한다. (나중에 생각: bicycle GAN 활용)
+
